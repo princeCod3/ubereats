@@ -31,7 +31,7 @@ public class ProductTestCase {
 		
 	}
 	
-	
+	//Bugs generated - No MENU and CATEGORY table values in database as yet
 	@Test
 	public void TestCRUDProduct() {
 		
