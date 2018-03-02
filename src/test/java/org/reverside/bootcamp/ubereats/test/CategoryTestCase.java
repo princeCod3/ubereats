@@ -45,14 +45,14 @@ public class CategoryTestCase {
 	}*/ 
 
 	
-  @Test
+/*  @Test
 	public void TestGetCategory() {
 		
 		category = categoryDAO.get(2);
 		assertEquals("Successfully fetched a single category based on id","Test2",category.getName());
 		
 	}
-	
+	*/
 	/*@Test
 	public void TestUpdateCategory() {
 		
@@ -80,7 +80,7 @@ public class CategoryTestCase {
 		
 	}*/
 	
-/*	@Test
+	@Test
 	public void TestCRUDCategory() {
 		
 		//add new category
@@ -103,5 +103,5 @@ public class CategoryTestCase {
 		
 		//get list
 		assertEquals("ERROR while fetching a list of active categories",2,categoryDAO.list().size());
-	}*/
+	}
 }

@@ -40,6 +40,10 @@ public class ProductTestCase {
 		product.setName("JUNIT");
 		product.setDescription("Test Case for Product add() method");
 		product.setUnitPrice(358.00);
+		product.setCategoryId(1);
+		product.setMenuId(2);
+		product.setCode("PRDBGSUIDBB");
+		
 		
 		assertEquals("ERROR while adding category inside table",true,productDAO.add(product));
 	}

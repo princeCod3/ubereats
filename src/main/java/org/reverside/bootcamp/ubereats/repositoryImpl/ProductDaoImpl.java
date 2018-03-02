@@ -40,14 +40,14 @@ public class ProductDaoImpl implements ProductDAO {
 	public List<Product> list(){
 	
 		return sessionFactory.getCurrentSession()
-				.createQuery("FROM product",Product.class)
+				.createQuery("FROM Product",Product.class)
 				.getResultList();	
 	}
 	
 	//only active products
 	@Override
 	public List<Product> listActiveProducts() {
-		String selectActiveProducts =("FROM product WHERE active = :active");
+		String selectActiveProducts =("FROM Product WHERE active = :active");
 
 		return sessionFactory
 				.getCurrentSession()
@@ -61,7 +61,7 @@ public class ProductDaoImpl implements ProductDAO {
 	@Override
 	public List<Product> listActiveProductsByCategory(int category_id) {
 	
-		String selectActiveProductsByCategory =("FROM product WHERE active = :active AND categoryId = :categoryId");
+		String selectActiveProductsByCategory =("FROM Product WHERE active = :active AND categoryId = :categoryId");
 
 		return sessionFactory
 				.getCurrentSession()
@@ -75,7 +75,7 @@ public class ProductDaoImpl implements ProductDAO {
 	public List<Product> getLatestActiveProducts(int count) {
 		
 		 	return sessionFactory.getCurrentSession()
-				.createQuery("FROM product WHERE active = :active ORDER BY id",Product.class)
+				.createQuery("FROM Product WHERE active = :active ORDER BY id",Product.class)
 				.setParameter("active", true)
 				.setFirstResult(0)
 				.setMaxResults(count)

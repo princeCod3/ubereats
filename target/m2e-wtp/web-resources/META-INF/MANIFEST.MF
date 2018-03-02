@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ubereats
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: User
+Implementation-Vendor-Id: org.reverside.bootcamp
+Build-Jdk: 1.8.0_101
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+Main-Class: com.programmer.gate.Application
+

@@ -13,9 +13,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
 
 
-import org.hibernate.validator.constraints.Email;
+
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 @Inheritance
@@ -23,28 +23,21 @@ public class User {
 	
 	//private fields
 	@Id
-	@Email(message = "*Please provide a valid Email")
-	@NotEmpty(message = "*Please provide an email")
+
 	private String email;
 	
-	
-	@NotEmpty(message = "*Please provide your name")
 	private String name;
-	
-	@NotEmpty(message = "*Please provide your surname")
+
 	private String surname;
-	
 	
 	@Column(name="phone_number")
 	private String phone_num;
 	
-	
 	@Length(min = 5, message = "*Your password must have at least 5 characters")
-	@NotEmpty(message = "*Please provide your password")
+	
 	@Transient
 	private String password;
 	
-	@NotEmpty(message = "*Please provide your recovery question")
 	private String recovery_question;
 	
 	@Column(name = "is_active")
