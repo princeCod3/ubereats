@@ -102,6 +102,6 @@ public class CategoryTestCase {
 		assertEquals("ERROR while deleting a single  category",true,categoryDAO.deleteCategory(category));
 		
 		//get list
-		assertEquals("ERROR while fetching a list of active categories",2,categoryDAO.list().size());
+		assertEquals("ERROR while fetching a list of active categories",6,categoryDAO.list().size());
 	}
 }

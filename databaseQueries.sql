@@ -35,7 +35,7 @@ is_active BOOLEAN,
 purchases INT DEFAULT 0,
 views INT DEFAULT 0,
 category_id INT,
-menu_id INT NOT NULL,
+menu_id INT,
 
 CONSTRAINT pk_product_id PRIMARY KEY (id),
 CONSTRAINT fk_product_category_id FOREIGN KEY (category_id) REFERENCES category (id),
@@ -153,8 +153,10 @@ password VARCHAR(100) NOT NULL,
 recovery_response VARCHAR(500) NOT NULL,
 is_active BOOLEAN NOT NULL,
 enabled BOOLEAN NOT NULL,
+account_id INT,
 
-CONSTRAINT pk_customer_email PRIMARY KEY (email)
+CONSTRAINT pk_user_email PRIMARY KEY (email),
+CONSTRAINT fk_userAccount_id FOREIGN KEY (account_id) REFERENCES account (id)
 );
 
 CREATE TABLE User_Role(

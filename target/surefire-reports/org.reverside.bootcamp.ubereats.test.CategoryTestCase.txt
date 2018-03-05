@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.reverside.bootcamp.ubereats.test.CategoryTestCase
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.648 s <<< FAILURE! - in org.reverside.bootcamp.ubereats.test.CategoryTestCase
-TestGetCategory(org.reverside.bootcamp.ubereats.test.CategoryTestCase)  Time elapsed: 0.747 s  <<< ERROR!
-java.lang.NullPointerException
-	at org.reverside.bootcamp.ubereats.test.CategoryTestCase.TestGetCategory(CategoryTestCase.java:52)
-

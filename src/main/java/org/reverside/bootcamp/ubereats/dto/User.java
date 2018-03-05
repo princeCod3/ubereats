@@ -23,15 +23,17 @@ public class User {
 	
 	//private fields
 	@Id
-
 	private String email;
 	
 	private String name;
 
 	private String surname;
 	
-	@Column(name="phone_number")
-	private String phone_num;
+	@Column(name="account_id")
+	private int accountId;
+	
+	@Column(name="phone_num")
+	private String phoneNum;
 	
 	@Length(min = 5, message = "*Your password must have at least 5 characters")
 	
@@ -54,13 +56,14 @@ public class User {
 	public User() {
 		
 	}
-    public User(String email, int id_num, String name, String surname, String phone_num, String password,
+    public User(String email, int id_num, String name, String surname, int accountId, String phoneNum, String password,
 			String recovery_question) {
 		super();
 		this.email = email;
 		this.name = name;
 		this.surname = surname;
-		this.phone_num = phone_num;
+		this.accountId = accountId;
+		this.phoneNum = phoneNum;
 		this.password = password;
 		this.recovery_question = recovery_question;
 	}
@@ -97,13 +100,19 @@ public class User {
 	}
 
 
-	public String getPhone_num() {
-		return phone_num;
+	public int getAccount_id() {
+		return accountId;
+	}
+	public void setAccount_id(int account_id) {
+		this.accountId = account_id;
+	}
+	public String getPhoneNum() {
+		return phoneNum;
 	}
 
 
-	public void setPhone_num(String phone_num) {
-		this.phone_num = phone_num;
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
 	}
 
 
@@ -154,7 +163,7 @@ public class User {
 	//To String method
 	@Override
 	public String toString() {
-		return "User [email=" + email + ", name=" + name + ", surname=" + surname + ", phone_num=" + phone_num
+		return "User [email=" + email + ", name=" + name + ", surname=" + surname + ", accountId ="+ accountId + ", phoneNum=" + phoneNum
 				+ ", password=" + password + ", recovery_question=" + recovery_question + ", active=" + active
 				+ ", roles=" + roles + "]";
 	}
