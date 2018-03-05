@@ -58,12 +58,12 @@ password VARCHAR(100) NOT NULL,
 recovery_response VARCHAR(500) NOT NULL,
 enabled BOOLEAN NOT NULL,
 is_active BOOLEAN NOT NULL,
-account_id INT,
+account_num INT,
 role_id INT NOT NULL,
 
 CONSTRAINT pk_business_email PRIMARY KEY (email),
-CONSTRAINT fk_business_account_id FOREIGN KEY (account_id) REFERENCES account (id),
-CONSTRAINT fk_business_role_id FOREIGN KEY (role_id) REFERENCES role (id)
+CONSTRAINT fk_business_account_num FOREIGN KEY (account_num) REFERENCES account (account_num),
+CONSTRAINT fk_business_role_id FOREIGN KEY (role_id) REFERENCES role (role_id)
 );
 
 
@@ -79,12 +79,12 @@ vehicle_type VARCHAR(255),
 orders_completed INT NOT NULL,
 enabled BOOLEAN NOT NULL,
 is_active BOOLEAN NOT NULL,
-account_id INT,
+account_num INT,
 role_id INT NOT NULL,
 
 CONSTRAINT pk_driver_email PRIMARY KEY (email),
-CONSTRAINT fk_driver_account_id FOREIGN KEY (account_id) REFERENCES account (id),
-CONSTRAINT fk_driver_role_id FOREIGN KEY (role_id) REFERENCES role (id)
+CONSTRAINT fk_driver_account_num FOREIGN KEY (account_num) REFERENCES account (account_num),
+CONSTRAINT fk_driver_role_id FOREIGN KEY (role_id) REFERENCES role (role_id)
 );
 
 CREATE TABLE Customer(
@@ -97,12 +97,12 @@ password VARCHAR(100) NOT NULL,
 recovery_response VARCHAR(500) NOT NULL,
 is_active BOOLEAN NOT NULL,
 enabled BOOLEAN NOT NULL,
-account_id INT,
+account_num INT,
 role_id INT NOT NULL,
 
 CONSTRAINT pk_customer_email PRIMARY KEY (email),
-CONSTRAINT fk_customer_account_id FOREIGN KEY (account_id) REFERENCES account (id),
-CONSTRAINT fk_customer_role_id FOREIGN KEY (role_id) REFERENCES role (id)
+CONSTRAINT fk_customer_account_num FOREIGN KEY (account_num) REFERENCES account (account_num),
+CONSTRAINT fk_customer_role_id FOREIGN KEY (role_id) REFERENCES role (role_id)
 );
 
 CREATE TABLE Admin(
@@ -117,29 +117,28 @@ enabled BOOLEAN NOT NULL,
 role_id INT NOT NULL,
 
 CONSTRAINT pk_email PRIMARY KEY (email),
-CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES role (id)
+CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES role (role_id)
 );
 
 CREATE TABLE ROLE(
 
-id IDENTITY NOT NULL,
+role_id IDENTITY NOT NULL,
 role VARCHAR NOT NULL,
 
-CONSTRAINT pk_role_id PRIMARY KEY (id)
+CONSTRAINT pk_role_id PRIMARY KEY (role_id)
 );
 
 CREATE TABLE ACCOUNT(
 
-id IDENTITY NOT NULL,
-account_num VARCHAR(255) NOT NULL,
+account_num INT NOT NULL,
 account_holder VARCHAR(255) NOT NULL,
-card_number VARCHAR(50) NOT NULL,
+card_number INT NOT NULL,
 exp_date VARCHAR(6) NOT NULL,
 cvc INT NOT NULL,
 branch_code INT NOT NULL,
 payment_method VARCHAR(50),
 
-CONSTRAINT pk_account_id PRIMARY KEY (id)
+CONSTRAINT pk_account_num PRIMARY KEY (account_num)
 );
 
 
@@ -151,12 +150,13 @@ surname VARCHAR(255) NOT NULL,
 phone_num VARCHAR(15) NOT NULL,
 password VARCHAR(100) NOT NULL,
 recovery_response VARCHAR(500) NOT NULL,
-is_active BOOLEAN NOT NULL,
+is_active BOOLEAN,
 enabled BOOLEAN NOT NULL,
-account_id INT,
+role VARCHAR(50) NOT NULL,
+account_num INT,
 
 CONSTRAINT pk_user_email PRIMARY KEY (email),
-CONSTRAINT fk_userAccount_id FOREIGN KEY (account_id) REFERENCES account (id)
+CONSTRAINT fk_userAccount_num FOREIGN KEY (account_num) REFERENCES account (account_num)
 );
 
 CREATE TABLE User_Role(
@@ -165,7 +165,19 @@ role_id INT NOT NULL,
 email VARCHAR(255) NOT NULL,
 
 PRIMARY KEY(role_id,email),
-CONSTRAINT fk_userRole_id FOREIGN KEY (role_id) REFERENCES role (id),
+CONSTRAINT fk_userRole_id FOREIGN KEY (role_id) REFERENCES role (role_id),
 CONSTRAINT fk_userRole_email FOREIGN KEY (email) REFERENCES user (email)
 
+);
+
+
+CREATE TABLE Cart(
+
+id IDENTITY NOT NULL,
+user_id VARCHAR(255) NOT NULL,
+total DOUBLE DEFAULT 0.00,
+cart_lines INT,
+
+CONSTRAINT pk_cart_id PRIMARY KEY(id),
+CONSTRAINT fk_cartUser_id FOREIGN KEY (user_id) REFERENCES user (email) 
 );

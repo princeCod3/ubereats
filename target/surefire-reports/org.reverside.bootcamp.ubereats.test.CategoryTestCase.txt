@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.reverside.bootcamp.ubereats.test.CategoryTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 19.922 s <<< FAILURE! - in org.reverside.bootcamp.ubereats.test.CategoryTestCase
+TestCRUDCategory(org.reverside.bootcamp.ubereats.test.CategoryTestCase)  Time elapsed: 1.513 s  <<< FAILURE!
+java.lang.AssertionError: ERROR while fetching a list of active categories expected:<6> but was:<7>
+	at org.reverside.bootcamp.ubereats.test.CategoryTestCase.TestCRUDCategory(CategoryTestCase.java:105)
+

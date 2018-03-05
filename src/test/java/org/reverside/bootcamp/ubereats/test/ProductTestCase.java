@@ -32,7 +32,7 @@ public class ProductTestCase {
 	}
 	
 	//Bugs generated - No MENU and CATEGORY table values in database as yet
-	@Test
+/*	@Test
 	public void TestCRUDProduct() {
 		
 		product = new Product();
@@ -42,10 +42,20 @@ public class ProductTestCase {
 		product.setUnitPrice(358.00);
 		product.setCategoryId(1);
 		product.setMenuId(2);
-		product.setCode("PRDBGSUIDBB");
+		product.setCode("PRD768");
 		
 		
 		assertEquals("ERROR while adding category inside table",true,productDAO.add(product));
+
+		
+	}
+	*/
+	
+	
+	@Test 
+	public void testListActiveProducts() {
+		
+		assertEquals("Something went wrong while fetching list of products!",6,productDAO.listActiveProducts().size());
 	}
 	
 	

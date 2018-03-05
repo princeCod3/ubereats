@@ -1,9 +1,8 @@
 package org.reverside.bootcamp.ubereats.repository;
 
 import java.util.List;
-import java.util.Set;
 
-import org.reverside.bootcamp.ubereats.dto.Role;
+import org.reverside.bootcamp.ubereats.dto.Cart;
 import org.reverside.bootcamp.ubereats.dto.User;
 
 public interface UserDAO {
@@ -17,7 +16,12 @@ public interface UserDAO {
 	boolean deactivateUser(User user);
 	
 	//Listing users for Admin activities
-	List<User> listUserByRole(Set<Role> role);
+	User listUserByRole(String role);
 	List<User> listAllActiveUsers();
+	
+	//Each User has One Cart
+	boolean addCart(Cart cart);
+
+	
 
 }

@@ -1,10 +1,9 @@
 package org.reverside.bootcamp.ubereats.repositoryImpl;
 
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.SessionFactory;
-import org.reverside.bootcamp.ubereats.dto.Role;
+import org.reverside.bootcamp.ubereats.dto.Cart;
 import org.reverside.bootcamp.ubereats.dto.User;
 import org.reverside.bootcamp.ubereats.repository.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,15 @@ public class UserDaoImpl implements UserDAO {
 	//listing users
 
 	@Override
-	public List<User> listUserByRole(Set<Role> role) {
+	public User listUserByRole(String role) {
 		
-		return null;
+	String listUserByRole = ("FROM User WHERE role = :role");
+		
+		return sessionFactory
+				.getCurrentSession()
+				.createQuery(listUserByRole, User.class)
+				.setParameter("role", true)
+				.getSingleResult();
 	}
 	
 	@Override
@@ -116,6 +121,22 @@ public class UserDaoImpl implements UserDAO {
 			ex.printStackTrace();
 			return false;	
 		}
+	}
+
+	//Cart generation
+	@Override
+	public boolean addCart(Cart cart) {
+		
+		try {
+			
+			sessionFactory.getCurrentSession().persist(cart);
+			return true;
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return false;	
+		}
+		
 	}
 
 	

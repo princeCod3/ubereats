@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.reverside.bootcamp.ubereats.test.ProductTestCase
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.468 s <<< FAILURE! - in org.reverside.bootcamp.ubereats.test.ProductTestCase
+org.reverside.bootcamp.ubereats.test.ProductTestCase  Time elapsed: 4.468 s  <<< ERROR!
+org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [org.apache.commons.dbcp2.BasicDataSource@785ed99c] with key 'getDataSource'; nested exception is javax.management.InstanceAlreadyExistsException: org.apache.commons.dbcp2:name=getDataSource,type=BasicDataSource
+	at org.reverside.bootcamp.ubereats.test.ProductTestCase.init(ProductTestCase.java:26)
+Caused by: javax.management.InstanceAlreadyExistsException: org.apache.commons.dbcp2:name=getDataSource,type=BasicDataSource
+	at org.reverside.bootcamp.ubereats.test.ProductTestCase.init(ProductTestCase.java:26)
+
