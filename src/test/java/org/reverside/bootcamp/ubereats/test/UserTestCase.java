@@ -34,7 +34,7 @@ public class UserTestCase {
 	}
 	
 	
-	@Test
+/*	@Test
 	public void testAdd() {
 		
 		//add a user
@@ -47,16 +47,34 @@ public class UserTestCase {
 		user.setPassword("testcase123");
 		user.setRecoveryQuestion("Test Case 123?");
 		user.setAccount_id(1);
-		user.setRole("CUSTOMER");
+		user.setRole("USER");
 		
-		assertEquals("Something went wrong while adding a new User",true, userDAO.addUser(user));
 		
+		
+		if (user.getRole().equals("USER") ) {
 		//add a cart
 		cart = new Cart();
-		cart.setUserId("prince@gmail.com");
+		cart.setUserId(user.getEmail());
+		cart.setUser(user);
+		// attach cart to a user
+		user.setCart(cart);
+		}
+		assertEquals("Something went wrong while adding a new User",true, userDAO.addUser(user));
 		
-		assertEquals("Something went wrong while adding a new cart",true, userDAO.addCart(cart));
 		
+	}*/
+	
+	@Test
+	public void testUpdateCart() {
+		//fetch user by its email
+		user = userDAO.findByEmail("prince@gmail.com");
+		//fetch user's cart
+		cart = user.getCart();
 		
+		cart.setTotal(789.00);
+		
+		cart.setCartLines(2);
+		
+		assertEquals("Failed to update cart",true,userDAO.updateCart(cart));
 	}
 }

@@ -66,6 +66,9 @@ public class HibernateConfig {
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
+		//"create" creates a table if non-existing and drops one and recreate it if it it exists
+		// "update" if you want to update or create only
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		//additional hibernate properties should go here..
 		
 		

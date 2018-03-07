@@ -34,12 +34,12 @@ public class JsonDataController {
 	
 	}
 	
-	// Fetches all products from database and returns a JSON List
-	@RequestMapping("/category/{id}/products")
+	// Fetches all products by menu id from database and returns a JSON List
+	@RequestMapping("/menu/{id}/products")
 	@ResponseBody //we just need JSON not ModelAndView
-	public List<Product> getProductsByCategory(@PathVariable int category_id){
+	public List<Product> getProductsByCategory(@PathVariable int menu_id){
 		
-		return productDAO.listActiveProductsByCategory(category_id);
+		return productDAO.listActiveProductsByMenu(menu_id);
 	
 	}
 }

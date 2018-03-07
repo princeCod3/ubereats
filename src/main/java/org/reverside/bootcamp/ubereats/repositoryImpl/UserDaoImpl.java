@@ -3,6 +3,7 @@ package org.reverside.bootcamp.ubereats.repositoryImpl;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.reverside.bootcamp.ubereats.dto.Account;
 import org.reverside.bootcamp.ubereats.dto.Cart;
 import org.reverside.bootcamp.ubereats.dto.User;
 import org.reverside.bootcamp.ubereats.repository.UserDAO;
@@ -23,13 +24,18 @@ public class UserDaoImpl implements UserDAO {
 	public User findByEmail(String email) {
 		
 		String findByEmail = ("FROM User WHERE email = :email");
-		
+	try {	
 		return sessionFactory
 				.getCurrentSession()
 				.createQuery(findByEmail,User.class)
-				.setParameter("email", true)
+				.setParameter("email", email)
 				.getSingleResult();
-			
+	    }
+	catch(Exception ex) {
+		ex.printStackTrace();
+		return null;
+	    }
+	
 	}
 	
 	//listing users
@@ -125,11 +131,11 @@ public class UserDaoImpl implements UserDAO {
 
 	//Cart generation
 	@Override
-	public boolean addCart(Cart cart) {
+	public boolean updateCart(Cart cart) {
 		
 		try {
 			
-			sessionFactory.getCurrentSession().persist(cart);
+			sessionFactory.getCurrentSession().update(cart);
 			return true;
 		}
 		catch(Exception ex) {
@@ -137,6 +143,20 @@ public class UserDaoImpl implements UserDAO {
 			return false;	
 		}
 		
+	}
+
+	@Override
+	public boolean createAccount(Account account) {
+		
+    try {
+			
+			sessionFactory.getCurrentSession().persist(account);
+			return true;
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return false;	
+		}
 	}
 
 	

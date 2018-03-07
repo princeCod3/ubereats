@@ -34,3 +34,13 @@ VALUES(4,'PRD789','MINT PASTA', true, 99.99, 3);
 
 INSERT INTO product(id, code, name, is_active, unit_price, category_id)
 VALUES(6,'PRD500','ROOIBOS TEA', true, 12.99, 2);
+
+--roles--
+INSERT INTO role(role_id,role)
+VALUES (1,'ADMIN');
+INSERT INTO role(role_id,role)
+VALUES (2,'USER');
+INSERT INTO role(role_id,role)
+VALUES (3,'RESTAURANT');
+INSERT INTO role(role_id,role)
+VALUES (4,'DRIVER');

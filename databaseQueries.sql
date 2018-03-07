@@ -51,15 +51,15 @@ phone_num VARCHAR(15) NOT NULL,
 business_name VARCHAR(255) NOT NULL,
 business_address VARCHAR(500) NOT NULL,
 apt_suit VARCHAR(10),
-number_of_locations INT NOT NULL,
-weekly_orders INT NOT NULL,
+number_of_locations INT DEFAULT 0,
+weekly_orders INT DEFAULT 0,
 cuisine_type VARCHAR(100) NOT NULL,
 password VARCHAR(100) NOT NULL,
 recovery_response VARCHAR(500) NOT NULL,
-enabled BOOLEAN NOT NULL,
-is_active BOOLEAN NOT NULL,
+enabled BOOLEAN DEFAULT TRUE,
+is_active BOOLEAN DEFAULT TRUE,
 account_num INT,
-role_id INT NOT NULL,
+role_id VARCHAR(50) NOT NULL,
 
 CONSTRAINT pk_business_email PRIMARY KEY (email),
 CONSTRAINT fk_business_account_num FOREIGN KEY (account_num) REFERENCES account (account_num),
@@ -152,11 +152,12 @@ password VARCHAR(100) NOT NULL,
 recovery_response VARCHAR(500) NOT NULL,
 is_active BOOLEAN,
 enabled BOOLEAN NOT NULL,
-role VARCHAR(50) NOT NULL,
+role_id INT NOT NULL,
 account_num INT,
 
 CONSTRAINT pk_user_email PRIMARY KEY (email),
-CONSTRAINT fk_userAccount_num FOREIGN KEY (account_num) REFERENCES account (account_num)
+CONSTRAINT fk_userAccount_num FOREIGN KEY (account_num) REFERENCES account (account_num),
+CONSTRAINT fk_userRole_id FOREIGN KEY (role_id) REFERENCES role (role_id)
 );
 
 CREATE TABLE User_Role(

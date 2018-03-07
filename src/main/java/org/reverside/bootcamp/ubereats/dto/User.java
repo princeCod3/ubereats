@@ -1,9 +1,11 @@
 package org.reverside.bootcamp.ubereats.dto;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.Length;
@@ -42,14 +44,21 @@ public class User {
 	
 	private String role;
 	
+
 	/*@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "email"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;*/
 	
+	//Every user has a cart (OneToOne bi-directional mapping)
+	//cascade type ensures a cart is added with each user
+	@OneToOne(mappedBy="user",cascade = CascadeType.ALL)
+	private Cart cart;
+	
 	//Constructors
-	public User() {
-		
-	}
+		public User() {
+			
+		}
+	
     public User(String email, int id_num, String name, String surname, int accountId, String phoneNum, String password,
 			String recoveryQuestion, String role) {
 		super();
@@ -61,10 +70,12 @@ public class User {
 		this.password = password;
 		this.recoveryQuestion = recoveryQuestion;
 		this.role = role;
+		
 	}
 
     //Getter Setter methods
 
+	
 	public String getEmail() {
 		return email;
 	}
@@ -95,11 +106,11 @@ public class User {
 	}
 
 
-	public int getAccount_id() {
+	public int getAccountId() {
 		return accountId;
 	}
-	public void setAccount_id(int account_id) {
-		this.accountId = account_id;
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 	public String getPhoneNum() {
 		return phoneNum;
@@ -147,11 +158,18 @@ public class User {
 	}
 	
 	
-	public String getRole() {
+    public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 	
 	

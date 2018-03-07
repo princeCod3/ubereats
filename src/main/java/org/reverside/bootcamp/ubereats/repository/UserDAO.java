@@ -2,6 +2,7 @@ package org.reverside.bootcamp.ubereats.repository;
 
 import java.util.List;
 
+import org.reverside.bootcamp.ubereats.dto.Account;
 import org.reverside.bootcamp.ubereats.dto.Cart;
 import org.reverside.bootcamp.ubereats.dto.User;
 
@@ -20,8 +21,9 @@ public interface UserDAO {
 	List<User> listAllActiveUsers();
 	
 	//Each User has One Cart
-	boolean addCart(Cart cart);
+	boolean updateCart(Cart cart);
 
-	
+	//account details
+	boolean createAccount(Account account);
 
 }

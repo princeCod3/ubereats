@@ -4,12 +4,23 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.hibernate.validator.constraints.Length;
+
 
 @Entity
 public class Account {
-	
+	/*-------------------------*/	
 	@Id
+	private String account_id;
+	
+	public String getAccount_id() {
+		return account_id;
+	}
+
+	public void setAccount_id(String account_id) {
+		this.account_id = account_id;
+	}
+/*-----------------------------------*/	
+	
 	@Column(name="account_num")
 	private int accountNum;
 	
@@ -17,7 +28,7 @@ public class Account {
 	private String accountHolder;
 	
 	@Column(name="card_number")
-	@Length(min = 8)
+	
 	private int cardNumber;
 	
 	@Column(name="exp_date")
