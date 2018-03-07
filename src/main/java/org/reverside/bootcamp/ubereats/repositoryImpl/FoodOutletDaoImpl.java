@@ -19,7 +19,6 @@ public class FoodOutletDaoImpl implements FoodOutletDAO {
 	private SessionFactory sessionFactory;
 	
 	
-	
 	@Override
 	public FoodOutlet findByEmail(String email) {
 	
@@ -156,6 +155,21 @@ try {
 			return false;	
 		}
 	}
+
+	@Override
+	public List<FoodOutlet> listActiveFoodOutletsByCategory(String cuisineType) {
+		
+	String listAllActiveFoodOutletsByCategory = ("FROM FoodOutlet WHERE cuisineType = :cuisineType");
+		
+		return sessionFactory
+				.getCurrentSession()
+				.createQuery(listAllActiveFoodOutletsByCategory, FoodOutlet.class)
+				.setParameter("cuisineType", cuisineType)
+				.getResultList();
+	}
+
+
+	
 	
 	
 

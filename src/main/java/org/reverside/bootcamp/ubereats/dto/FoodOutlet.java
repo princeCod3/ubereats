@@ -37,9 +37,9 @@ public class FoodOutlet {
 	@Column(name="recovery_response")
 	private String recoveryResponse;
 	
-	private boolean enabled;
+	private boolean enabled = true;
 	@Column(name="is_active")
-	private boolean active;
+	private boolean active = true;
 	/*@Column(name="account_num")
 	private String accountNum;*/
 	

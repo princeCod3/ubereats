@@ -20,12 +20,21 @@ public interface FoodOutletDAO {
 	//Lists
 	List<FoodOutlet> listActiveFoodOutlets();
 	
+	//Basically listing by cuisine_type
+	List<FoodOutlet> listActiveFoodOutletsByCategory(String cuisineType);
+	
+	
+	//For location based searching, i.e region = Johannesburg
+	/*List<FoodOutlet> listActiveFoodOutletsByLocation(String region);*/
+	
 	//Each FoodOutlet has a Menu
 	boolean updateMenu(Menu menu);
 	
 	//Each FoodOulet has an account
 	boolean createAccount(Account account);
 	boolean updateAccount(Account account);
+
+	
 
 	
 

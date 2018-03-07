@@ -37,7 +37,7 @@ public class User {
 	private String recoveryQuestion;
 	
 	@Column(name = "is_active")
-	private boolean active;
+	private boolean active = true;
 	
 	@Column(name = "enabled")
 	private boolean enabled = true;
