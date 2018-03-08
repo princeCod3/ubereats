@@ -20,7 +20,7 @@ public interface ProductDAO {
 	
 	//Business Methods
 	List<Product> listActiveProducts();
-	List<Product> listActiveProductsByCategory(int category_id);
+	/*List<Product> listActiveProductsByCategory(int category_id);*/
 	List<Product> getLatestActiveProducts(int count);
 	List<Product> listActiveProductsByMenu(int menu_id);
 

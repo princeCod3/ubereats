@@ -8,16 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/restaurants")
+@RequestMapping(value="/restaurants")
 public class MenuController {
 
 	@Autowired
 	private FoodOutletDAO foodOutletDAO;
 	
-	@GetMapping("/active")
+	@RequestMapping(method = RequestMethod.GET)
 	public List<FoodOutlet> getAllFoodOutlets() {
 		
 		return foodOutletDAO.listActiveFoodOutlets();

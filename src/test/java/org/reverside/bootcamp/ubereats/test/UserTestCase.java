@@ -1,4 +1,4 @@
-package org.reverside.bootcamp.ubereats.test;
+/*package org.reverside.bootcamp.ubereats.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,7 +34,7 @@ public class UserTestCase {
 	}
 	
 	
-/*	@Test
+	@Test
 	public void testAdd() {
 		
 		//add a user
@@ -62,7 +62,7 @@ public class UserTestCase {
 		assertEquals("Something went wrong while adding a new User",true, userDAO.addUser(user));
 		
 		
-	}*/
+	}
 	
 	@Test
 	public void testUpdateCart() {
@@ -78,3 +78,4 @@ public class UserTestCase {
 		assertEquals("Failed to update cart",true,userDAO.updateCart(cart));
 	}
 }
+*/

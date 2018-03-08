@@ -1,4 +1,4 @@
-package org.reverside.bootcamp.ubereats.test;
+/*package org.reverside.bootcamp.ubereats.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,7 +34,7 @@ public class FoodOutletTestCase {
 		
 	}
 	
-/*	@Test
+	@Test
 	public void testAdd() {
 		
 		foodOutlet = new FoodOutlet();
@@ -58,10 +58,10 @@ public class FoodOutletTestCase {
 	    
 	    assertEquals("Failed to add new FoodOutlet!",true,foodOutletDAO.addFoodOutlet(foodOutlet));
 		
-	}*/
+	}
 	
 	
-/*	@Test
+	@Test
 	public void TestUpdateMenu() {
 		
 		foodOutlet = foodOutletDAO.findByEmail("roccomama@gmail.com");
@@ -73,7 +73,7 @@ public class FoodOutletTestCase {
 		menu.setDescription("Get the best of American food");
 		
 		assertEquals("failed to update menu",true,foodOutletDAO.updateMenu(menu));
-	}*/
+	}
 
 	@Test
 	public void TestCreateAccount() {
@@ -96,3 +96,4 @@ public class FoodOutletTestCase {
 	}
 	
 }
+*/

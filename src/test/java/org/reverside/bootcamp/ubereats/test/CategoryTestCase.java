@@ -1,4 +1,4 @@
-package org.reverside.bootcamp.ubereats.test;
+/*package org.reverside.bootcamp.ubereats.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -31,7 +31,7 @@ public class CategoryTestCase {
 	}
   
 	
-/*	@Test 
+	@Test 
     public void TestAddCategory( ) {
 		
      	category = new Category();
@@ -42,18 +42,18 @@ public class CategoryTestCase {
 		assertEquals("Successfully added category inside table",true,categoryDAO.addCategory(category));
 		
 	
-	}*/ 
+	} 
 
 	
-/*  @Test
+  @Test
 	public void TestGetCategory() {
 		
 		category = categoryDAO.get(2);
 		assertEquals("Successfully fetched a single category based on id","Test2",category.getName());
 		
 	}
-	*/
-	/*@Test
+	
+	@Test
 	public void TestUpdateCategory() {
 		
 		category = categoryDAO.get(2);
@@ -63,22 +63,22 @@ public class CategoryTestCase {
 		
 		assertEquals("Successfully updated a single category based on id",true,categoryDAO.updateCategory(category));
 		
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void TestDeleteCategory() {
 		//Deleting a single category
 		category = categoryDAO.get(3);
 		assertEquals("Successfully deleted a single category based on id",true,categoryDAO.deleteCategory(category));	
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void TestListCategories() {
 		
 		//fetches a list of active categories, I only have 2 thus far hence we compare against 2
 		assertEquals("Successfully fetched a list of active categories",2,categoryDAO.list().size());
 		
-	}*/
+	}
 	
 	@Test
 	public void TestCRUDCategory() {
@@ -105,3 +105,4 @@ public class CategoryTestCase {
 		assertEquals("ERROR while fetching a list of active categories",7,categoryDAO.list().size());
 	}
 }
+*/

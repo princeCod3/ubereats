@@ -12,9 +12,11 @@ org\reverside\bootcamp\ubereats\config\HibernateConfig.class
 org\reverside\bootcamp\ubereats\controller\WebController.class
 org\reverside\bootcamp\ubereats\dto\FoodOutlet.class
 org\reverside\bootcamp\ubereats\repository\UserDAO.class
+org\reverside\bootcamp\ubereats\controller\MenuController.class
 org\reverside\bootcamp\ubereats\repository\ProductDAO.class
 org\reverside\bootcamp\ubereats\dto\Cart.class
 org\reverside\bootcamp\ubereats\repository\CategoryDAO.class
+org\reverside\bootcamp\ubereats\repository\FoodOutletDAO.class
 org\reverside\bootcamp\ubereats\repository\CustomerDAO.class
 org\reverside\bootcamp\ubereats\dto\Product.class
 org\reverside\bootcamp\ubereats\repositoryImpl\CategoryDaoImpl.class
@@ -22,4 +24,5 @@ org\reverside\bootcamp\ubereats\dto\Delivery.class
 org\reverside\bootcamp\ubereats\repository\AdminDAO.class
 org\reverside\bootcamp\ubereats\controller\JsonDataController.class
 org\reverside\bootcamp\ubereats\dto\Account.class
+org\reverside\bootcamp\ubereats\repositoryImpl\FoodOutletDaoImpl.class
 org\reverside\bootcamp\ubereats\repositoryImpl\UserDaoImpl.class

@@ -58,7 +58,7 @@ public class ProductDaoImpl implements ProductDAO {
 				
 	}
 
-	@Override
+/*	@Override
 	public List<Product> listActiveProductsByCategory(int category_id) {
 	
 		String selectActiveProductsByCategory =("FROM Product WHERE active = :active AND categoryId = :categoryId");
@@ -69,7 +69,7 @@ public class ProductDaoImpl implements ProductDAO {
 				.setParameter("active", true)
 				.setParameter("categoryId", true)
 				.getResultList();
-	}
+	}*/
 
 	@Override
 	public List<Product> getLatestActiveProducts(int count) {

@@ -1,12 +1,13 @@
 package org.reverside.bootcamp.ubereats.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-
+//Menu converted to replace category
 @Entity
 public class Menu {
 
@@ -19,6 +20,9 @@ public class Menu {
 	private String description;
 	
 	private String image_url;
+	
+	@Column(name="is_active") //Ensures attribute is linked to relative column
+	private boolean active = true;
 	
 /*	private int category_id;*/
 	
@@ -70,6 +74,18 @@ public class Menu {
 		this.image_url = image_url;
 	}
 	
+	public boolean isActive() {
+		return active;
+	}
+
+
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+
+
 	/*public int getCategory_id() {
 		return category_id;
 	}

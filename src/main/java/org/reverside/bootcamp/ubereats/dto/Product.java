@@ -25,8 +25,8 @@ public class Product {
 	private boolean active;
 	private int purchases;
 	private int views;
-	@Column(name ="category_id")
-	private int categoryId;
+/*	@Column(name ="category_id")
+	private int categoryId;*/
 	@Column(name ="menu_id")
 	private int menuId;
 	
@@ -37,7 +37,7 @@ public class Product {
 	}
 	
 	public Product(int id, String name, double unitPrice, String imageUrl, String description, boolean active,
-			int purchases, int views, int categoryId, int menuId) {
+			int purchases, int views, int menuId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,7 +47,7 @@ public class Product {
 		this.active = active;
 		this.purchases = purchases;
 		this.views = views;
-		this.categoryId = categoryId;
+		/*this.categoryId = categoryId;*/
 		this.menuId = menuId;
 	}
 	
@@ -108,12 +108,12 @@ public class Product {
 	public void setViews(int views) {
 		this.views = views;
 	}
-	public int getCategoryId() {
+/*	public int getCategoryId() {
 		return categoryId;
 	}
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
-	}
+	}*/
 	public int getMenuId() {
 		return menuId;
 	}
@@ -127,7 +127,7 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", unitPrice=" + unitPrice + ", imageUrl=" + imageUrl
 				+ ", description=" + description + ", active=" + active + ", purchases=" + purchases + ", views="
-				+ views + ", categoryId=" + categoryId + ", menuId=" + menuId + "]";
+				+ views + ", menuId=" + menuId + "]";
 	}
 
 	
